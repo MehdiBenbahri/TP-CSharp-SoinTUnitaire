@@ -11,12 +11,7 @@ namespace SoinTUnitaire.Tests
     [TestClass()]
     public class PrestationTests
     {
-        [TestMethod()]
-        public void PrestationTest()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         [TestMethod()]
         public void CompareATest()
         {
