@@ -15,7 +15,8 @@ namespace SoinTUnitaire.Tests
         [TestMethod()]
         public void CompareATest()
         {
-            throw new NotImplementedException();
+            Prestation unePrestation = new Prestation("xx", new DateTime(2015, 9, 10, 12, 0, 0), new Intervenant("Dupond", "Jean"));
+            Assert.AreEqual(0, unePrestation.CompareA(unePrestation), "La somme doit être égale à 8");
         }
 
         [TestMethod()]
@@ -31,15 +32,4 @@ namespace SoinTUnitaire.Tests
 }
 
 
-/*
-        [TestMethod()]
-        public void SommePourRienTest()
-        {
-            int a = 3;
-            int b = 5;
-            
-            Prestation unePrestation = new Prestation("xx", new DateTime(2015, 9, 10, 12, 0, 0), new Intervenant("Dupond", "Jean"));
-            Assert.AreEqual(8, unePrestation.SommePourRien(a, b), "La somme doit être égale à 8");
-        }
-    }
-}*/
+

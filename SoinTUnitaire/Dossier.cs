@@ -78,20 +78,18 @@ namespace SoinTUnitaire
         public int getNbPrestationsExternes()
         {
             int totalNbPrestExt;
-            Prestation laPrestation;
+            
 
             totalNbPrestExt = 0;
 
-            for (int i = 0; i < mesPrestation.Count; i++)
+            foreach (Prestation unePrestation in mesPrestation)
             {
-
-                laPrestation = mesPrestation[i];
-
-                if (laPrestation.I_Intervenant1 is IntervenantExterne)
+                Intervenant unIntervenant = unePrestation.I_Intervenant1;
+                if (unIntervenant is IntervenantExterne)
                 {
-
                     totalNbPrestExt++;
                 }
+                
             }
 
 

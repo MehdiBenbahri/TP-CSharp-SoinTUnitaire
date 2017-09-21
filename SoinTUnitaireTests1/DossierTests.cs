@@ -17,18 +17,19 @@ namespace SoinTUnitaire.Tests
         public void getNbPrestationsExternesTest()
         {
             DateTime date = new DateTime(1805, 9, 10, 12, 0, 0);
-            Dossier unDossier = new Dossier("xx", "yy", date);
+            Dossier deuxDossier = new Dossier("xx", "yy", date);
             
             
             Intervenant zz = new Intervenant("tt", "ee");
-            
-            
-            unDossier.ajoutePrestation("Libelle P1", new DateTime(2015, 9, 1, 12, 0, 0), new IntervenantExterne("Durand", "Annie", "Cardiologue", "Marseille", "0202020202"));
-            unDossier.ajoutePrestation("Libelle P2", new DateTime(2015, 9, 8, 12, 0, 0), new IntervenantExterne("Sainz", "Olivier", "Radiologue", "Toulon", "0303030303"));
-            unDossier.ajoutePrestation("Libelle P1", new DateTime(2015, 9, 1, 12, 0, 0), new IntervenantExterne("Durand", "Annie", "Cardiologue", "Marseille", "0202020202"));
-            unDossier.ajoutePrestation("Libelle P2", new DateTime(2015, 9, 8, 12, 0, 0), new IntervenantExterne("Sainz", "Olivier", "Radiologue", "Toulon", "0303030303"));
-            
-            Assert.AreEqual(4, unDossier.getNbJoursSoins(), "");
+
+
+            deuxDossier.ajoutePrestation("Libelle P1", new DateTime(2015, 9, 1, 12, 0, 0), new IntervenantExterne("Durand", "Annie", "Cardiologue", "Marseille", "0202020202"));
+            deuxDossier.ajoutePrestation("Libelle P2", new DateTime(2015, 9, 8, 12, 0, 0), new IntervenantExterne("Sainz", "Olivier", "Radiologue", "Toulon", "0303030303"));
+            deuxDossier.ajoutePrestation("Libelle P1", new DateTime(2015, 9, 1, 12, 0, 0), new IntervenantExterne("Durand", "Annie", "Cardiologue", "Marseille", "0202020202"));
+            deuxDossier.ajoutePrestation("Libelle P4", new DateTime(2015, 9, 20, 12, 0, 0), new Intervenant("Maurin", "Joëlle"));
+            deuxDossier.ajoutePrestation("Libelle P4", new DateTime(2015, 9, 20, 12, 0, 0), new Intervenant("Maurin", "Joëlle"));
+            deuxDossier.ajoutePrestation("Libelle P4", new DateTime(2015, 9, 20, 12, 0, 0), new Intervenant("Maurin", "Joëlle"));
+            Assert.AreEqual(4, deuxDossier.getNbJoursSoins(), "");
         }
 
 
