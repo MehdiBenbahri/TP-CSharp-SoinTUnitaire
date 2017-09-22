@@ -15,9 +15,27 @@ namespace SoinTUnitaire.Tests
         [TestMethod()]
         public void CompareATest()
         {
-            Prestation unePrestation = new Prestation("xx", new DateTime(2015, 9, 10, 12, 0, 0), new Intervenant("Dupond", "Jean"));
-            Assert.AreEqual(0, unePrestation.CompareA(unePrestation), "La somme doit être égale à 8");
+            Prestation unePrestation = new Prestation("xx", new DateTime(2008, 9, 02, 12, 0, 0), new Intervenant("Dupond", "Jean"));
+            Prestation deuxPrestation = new Prestation("xx", new DateTime(2008, 9, 02, 12, 0, 0), new Intervenant("Dupond", "Jean"));
+            Assert.AreEqual(0, unePrestation.CompareA(deuxPrestation), "Doit retourner 0");
         }
+
+        [TestMethod()]
+        public void CompareATestSup()
+        {
+            Prestation unePrestation = new Prestation("xx", new DateTime(2008, 9, 02, 12, 0, 0), new Intervenant("Dupond", "Jean"));
+            Prestation deuxPrestation = new Prestation("xx", new DateTime(2015, 9, 02, 12, 0, 0), new Intervenant("Dupond", "Jean"));
+            Assert.AreEqual(-1, unePrestation.CompareA(deuxPrestation), "Doit retourner 0");
+        }
+
+        [TestMethod()]
+        public void CompareATestInf()
+        {
+            Prestation unePrestation = new Prestation("xx", new DateTime(2015, 9, 02, 12, 0, 0), new Intervenant("Dupond", "Jean"));
+            Prestation deuxPrestation = new Prestation("xx", new DateTime(2008, 9, 02, 12, 0, 0), new Intervenant("Dupond", "Jean"));
+            Assert.AreEqual(1, unePrestation.CompareA(deuxPrestation), "Doit retourner 0");
+        }
+
 
         [TestMethod()]
         public void SommePourRienTest()
